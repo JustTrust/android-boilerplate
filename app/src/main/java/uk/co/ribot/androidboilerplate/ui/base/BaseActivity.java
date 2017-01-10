@@ -1,6 +1,7 @@
 package uk.co.ribot.androidboilerplate.ui.base;
 
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 
 import java.util.HashMap;
@@ -13,12 +14,8 @@ import uk.co.ribot.androidboilerplate.injection.component.ActivityComponent;
 import uk.co.ribot.androidboilerplate.injection.component.ConfigPersistentComponent;
 import uk.co.ribot.androidboilerplate.injection.component.DaggerConfigPersistentComponent;
 import uk.co.ribot.androidboilerplate.injection.module.ActivityModule;
+import uk.co.ribot.androidboilerplate.util.Consts;
 
-/**
- * Abstract activity that every other Activity in this application must implement. It handles
- * creation of Dagger components and makes sure that instances of ConfigPersistentComponent survive
- * across configuration changes.
- */
 public class BaseActivity extends AppCompatActivity {
 
     private static final String KEY_ACTIVITY_ID = "KEY_ACTIVITY_ID";
@@ -27,6 +24,9 @@ public class BaseActivity extends AppCompatActivity {
 
     private ActivityComponent mActivityComponent;
     private long mActivityId;
+
+    private boolean mPaused;
+    private long mLastClickTime = SystemClock.elapsedRealtime();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +50,22 @@ public class BaseActivity extends AppCompatActivity {
         mActivityComponent = configPersistentComponent.activityComponent(new ActivityModule(this));
     }
 
+    public boolean isPaused() {
+        return mPaused;
+    }
+
+    @Override
+    protected void onPause() {
+        mPaused = true;
+        super.onPause();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mPaused = false;
+    }
+
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
@@ -67,6 +83,13 @@ public class BaseActivity extends AppCompatActivity {
 
     public ActivityComponent activityComponent() {
         return mActivityComponent;
+    }
+    protected boolean isClickAllowed() {
+        long now = SystemClock.elapsedRealtime();
+        if (now - mLastClickTime > Consts.CLICK_TIME_INTERVAL) {
+            mLastClickTime = now;
+            return true;
+        } else return false;
     }
 
 }
