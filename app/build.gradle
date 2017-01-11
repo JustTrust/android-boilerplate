@@ -115,6 +115,8 @@ dependencies {
         transitive = true;
     }
 
+    compile 'com.eightbitlab:blurview:1.1.2'
+
     compile 'com.jakewharton.timber:timber:4.1.2'
     compile "com.jakewharton:butterknife:$BUTTERKNIFE_VERSION"
     annotationProcessor "com.jakewharton:butterknife-compiler:$BUTTERKNIFE_VERSION"
