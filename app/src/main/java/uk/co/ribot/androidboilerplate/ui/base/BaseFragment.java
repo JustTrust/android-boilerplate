@@ -15,10 +15,7 @@ import uk.co.ribot.androidboilerplate.injection.component.FragmentComponent;
 import uk.co.ribot.androidboilerplate.injection.module.FragmentModule;
 import uk.co.ribot.androidboilerplate.util.Consts;
 
-/**
- * Created by Max Chervatiuk on 24.03.16.
- * Email: duo.blood@gmail.com
- */
+
 public abstract class BaseFragment extends Fragment {
 
     private FragmentComponent mFragmentComponent;

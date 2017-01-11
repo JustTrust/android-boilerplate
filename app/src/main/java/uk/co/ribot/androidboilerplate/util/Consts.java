@@ -1,9 +1,5 @@
 package uk.co.ribot.androidboilerplate.util;
 
-/**
- * Created by Belichenko Anton on 10.01.17.
- * mailto: a.belichenko@gmail.com
- */
 
 public interface Consts {
 

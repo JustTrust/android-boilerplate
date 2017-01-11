@@ -12,10 +12,7 @@ import uk.co.ribot.androidboilerplate.injection.component.FragmentComponent;
 import uk.co.ribot.androidboilerplate.injection.module.FragmentModule;
 import uk.co.ribot.androidboilerplate.util.Consts;
 
-/**
- * Created by Max Chervatiuk on 06.04.16.
- * Email: duo.blood@gmail.com
- */
+
 public class BaseDialogFragment extends DialogFragment {
 
     private FragmentComponent mFragmentComponent;

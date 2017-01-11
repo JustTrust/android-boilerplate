@@ -1,4 +1,4 @@
-package uk.co.ribot.androidboilerplate.ui.main;
+package uk.co.ribot.androidboilerplate.ui.mvp.mvp_viev;
 
 import java.util.List;
 

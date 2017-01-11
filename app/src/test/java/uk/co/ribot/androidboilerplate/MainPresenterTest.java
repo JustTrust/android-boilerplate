@@ -15,8 +15,8 @@ import rx.Observable;
 import uk.co.ribot.androidboilerplate.data.DataManager;
 import uk.co.ribot.androidboilerplate.data.model.Ribot;
 import uk.co.ribot.androidboilerplate.test.common.TestDataFactory;
-import uk.co.ribot.androidboilerplate.ui.main.MainMvpView;
-import uk.co.ribot.androidboilerplate.ui.main.MainPresenter;
+import uk.co.ribot.androidboilerplate.ui.mvp.mvp_viev.MainMvpView;
+import uk.co.ribot.androidboilerplate.ui.mvp.presenters.MainPresenter;
 import uk.co.ribot.androidboilerplate.util.RxSchedulersOverrideRule;
 
 import static org.mockito.Matchers.anyListOf;

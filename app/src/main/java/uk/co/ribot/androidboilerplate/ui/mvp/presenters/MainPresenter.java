@@ -1,4 +1,4 @@
-package uk.co.ribot.androidboilerplate.ui.main;
+package uk.co.ribot.androidboilerplate.ui.mvp.presenters;
 
 import java.util.List;
 
@@ -13,6 +13,7 @@ import uk.co.ribot.androidboilerplate.data.DataManager;
 import uk.co.ribot.androidboilerplate.data.model.Ribot;
 import uk.co.ribot.androidboilerplate.injection.ConfigPersistent;
 import uk.co.ribot.androidboilerplate.ui.base.BasePresenter;
+import uk.co.ribot.androidboilerplate.ui.mvp.mvp_viev.MainMvpView;
 import uk.co.ribot.androidboilerplate.util.RxUtil;
 
 @ConfigPersistent

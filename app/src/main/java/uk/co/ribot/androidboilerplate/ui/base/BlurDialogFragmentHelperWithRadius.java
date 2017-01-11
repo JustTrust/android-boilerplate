@@ -12,9 +12,6 @@ import android.widget.FrameLayout;
 import eightbitlab.com.blurview.BlurView;
 import eightbitlab.com.blurview.RenderScriptBlur;
 
-/**
- * Created by a.belichenko@gmail.com on 23.05.16.
- */
 
 class BlurDialogFragmentHelperWithRadius {
     private final DialogFragment mFragment;

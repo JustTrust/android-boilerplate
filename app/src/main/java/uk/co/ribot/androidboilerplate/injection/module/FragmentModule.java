@@ -6,10 +6,7 @@ import android.support.v4.app.Fragment;
 import dagger.Module;
 import dagger.Provides;
 
-/**
- * Created by Max Chervatiuk on 31.03.16.
- * Email: duo.blood@gmail.com
- */
+
 @Module
 public class FragmentModule {
 

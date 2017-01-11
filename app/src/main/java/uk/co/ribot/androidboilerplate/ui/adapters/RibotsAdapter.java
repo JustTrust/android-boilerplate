@@ -1,4 +1,4 @@
-package uk.co.ribot.androidboilerplate.ui.main;
+package uk.co.ribot.androidboilerplate.ui.adapters;
 
 import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;

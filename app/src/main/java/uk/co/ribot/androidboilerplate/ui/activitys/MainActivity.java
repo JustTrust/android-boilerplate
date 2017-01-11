@@ -1,4 +1,4 @@
-package uk.co.ribot.androidboilerplate.ui.main;
+package uk.co.ribot.androidboilerplate.ui.activitys;
 
 import android.content.Context;
 import android.content.Intent;
@@ -17,7 +17,10 @@ import butterknife.ButterKnife;
 import uk.co.ribot.androidboilerplate.R;
 import uk.co.ribot.androidboilerplate.data.SyncService;
 import uk.co.ribot.androidboilerplate.data.model.Ribot;
+import uk.co.ribot.androidboilerplate.ui.adapters.RibotsAdapter;
 import uk.co.ribot.androidboilerplate.ui.base.BaseActivity;
+import uk.co.ribot.androidboilerplate.ui.mvp.mvp_viev.MainMvpView;
+import uk.co.ribot.androidboilerplate.ui.mvp.presenters.MainPresenter;
 import uk.co.ribot.androidboilerplate.util.DialogFactory;
 
 public class MainActivity extends BaseActivity implements MainMvpView {
