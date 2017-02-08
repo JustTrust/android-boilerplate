@@ -3,6 +3,9 @@ package uk.co.ribot.androidboilerplate.util;
 
 public interface Consts {
 
+    String PREFERENCE_PASSWORD = "3rOr90qMj9d1Ol";
+
+
     // server responses
     int RESPONSE_OK = 200;
     int BAD_REQUEST = 400;
