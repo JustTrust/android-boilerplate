@@ -4,9 +4,11 @@ import android.app.Application;
 import android.content.Context;
 
 import com.crashlytics.android.Crashlytics;
+import com.facebook.stetho.Stetho;
 
 import io.fabric.sdk.android.Fabric;
 import timber.log.Timber;
+import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 import uk.co.ribot.androidboilerplate.injection.component.ApplicationComponent;
 import uk.co.ribot.androidboilerplate.injection.component.DaggerApplicationComponent;
 import uk.co.ribot.androidboilerplate.injection.module.ApplicationModule;
@@ -20,9 +22,22 @@ public class BoilerplateApplication extends Application  {
         super.onCreate();
 
         if (BuildConfig.DEBUG) {
-            Timber.plant(new Timber.DebugTree());
+            Stetho.initializeWithDefaults(this);
+            Timber.plant(new Timber.DebugTree() {
+                @Override
+                protected String createStackElementTag(StackTraceElement element) {
+                    return super.createStackElementTag(element)
+                            + "::Line:" + element.getLineNumber() + ""
+                            + "::" + element.getMethodName() + "()";
+                }
+            });
             Fabric.with(this, new Crashlytics());
         }
+        CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
+                .setDefaultFontPath("fonts/Roboto-Regular.ttf")
+                .setFontAttrId(R.attr.fontPath)
+                .build()
+        );
     }
 
     public static BoilerplateApplication get(Context context) {
